@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cul1osdt1muar"]
+
+[ext_resource type="Texture2D" uid="uid://cknin7dotag2k" path="res://Objects/Texture/树_0.png" id="1_v6vah"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxhit"]
+radius = 0.066
+height = 1.23
+
+[node name="树" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22849, 0.404229, -0.36192)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_v6vah")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("CapsuleShape3D_wxhit")

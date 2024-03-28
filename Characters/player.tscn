@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://dv3oyjl218seo"]
+
+[ext_resource type="Texture2D" uid="uid://b24f034vbvmtf" path="res://素材/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Run.png" id="1_8oydx"]
+[ext_resource type="Script" path="res://Characters/Script/Player.gd" id="1_hlana"]
+[ext_resource type="Shader" path="res://Characters/vignette.gdshader" id="2_0a17h"]
+[ext_resource type="Script" path="res://Characters/Script/Camera.gd" id="3_bijyj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4vjt"]
+size = Vector3(0.312531, 0.472351, 1)
+
+[sub_resource type="Animation" id="Animation_5oi2r"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_3fv8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fuvgn"]
+resource_name = "run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isbwj"]
+_data = {
+"Idle": SubResource("Animation_5oi2r"),
+"RESET": SubResource("Animation_3fv8p"),
+"run": SubResource("Animation_fuvgn")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_88wxr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe8lv"]
+shader = ExtResource("2_0a17h")
+shader_parameter/color = null
+shader_parameter/multiplier = 0.1
+shader_parameter/softness = 1.5
+
+[node name="Player" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_hlana")
+
+[node name="Mesh" type="Node3D" parent="Player"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Player/Mesh"]
+texture = ExtResource("1_8oydx")
+hframes = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0243073, -0.163544, 0)
+shape = SubResource("BoxShape3D_g4vjt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_isbwj")
+}
+
+[node name="Camroot" type="Node3D" parent="Player"]
+script = ExtResource("3_bijyj")
+
+[node name="h" type="Node3D" parent="Player/Camroot"]
+
+[node name="v" type="Node3D" parent="Player/Camroot/h"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0585788, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Camroot/h/v"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374239, 1.21325)
+attributes = SubResource("CameraAttributesPractical_88wxr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camroot/h/v/Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camroot/h/v/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_xe8lv")
+offset_right = 1154.0
+offset_bottom = 645.0
+metadata/_edit_use_anchors_ = true
