@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcl66frlpaoe5"]
+[gd_scene load_steps=12 format=3 uid="uid://dcl66frlpaoe5"]
 
 [ext_resource type="MeshLibrary" uid="uid://8tfn5kp8qi8l" path="res://MeshLib/MeshLib.tres" id="1_xkqhh"]
 [ext_resource type="Script" path="res://Levels/Script/world.gd" id="1_y5on1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b5l10ysqgm2e4" path="res://素材/AllSkyFree_Godot-10e858fef0a9c5fa071de8bc191c3b4bef00edda/Screenshots/_0003_AllSkyFree_Screen_06.jpg" id="3_uhn3s"]
 [ext_resource type="PackedScene" uid="uid://bj6egi81kuki" path="res://Objects/石板_1.tscn" id="4_x5ko0"]
 [ext_resource type="PackedScene" uid="uid://cul1osdt1muar" path="res://Objects/树.tscn" id="5_kreac"]
+[ext_resource type="PackedScene" uid="uid://bl7qveiu1g3kl" path="res://Objects/雕像.tscn" id="7_hflhh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gri25"]
 panorama = ExtResource("3_uhn3s")
@@ -74,3 +75,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.518612, 1.36224, -2.18073)
 
 [node name="树" parent="Props" instance=ExtResource("5_kreac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39695, 1.67602, 0.0207211)
+
+[node name="雕像" parent="Props" instance=ExtResource("7_hflhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00832945, 1.32905, -0.88681)
+
+[node name="树2" parent="Props" instance=ExtResource("5_kreac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96902, 1.68053, -1.37779)

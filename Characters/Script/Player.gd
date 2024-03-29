@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 1.0
+var SPEED = 1.0
 const JUMP_VELOCITY = 2.5
 #获取重力
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,12 +23,19 @@ func _physics_process(delta):
 	#处理跳跃 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y =JUMP_VELOCITY
-	
-	$Mesh.rotation.y = lerp_angle($Mesh.rotation.y,atan2(direction.x,direction.z),delta*angular_acceleration)
+		#
+	#if Input.is_action_just_pressed("forward") ||Input.is_action_just_pressed("backward")||Input.is_action_just_pressed("left")||Input.is_action_just_pressed("right"):
+		#var h_rot = $Camroot/h.global_transform.basis.get_euler().y
+		#direction = Vector3((Input.get_action_strength("left")-Input.get_action_strength("right")),
+				#0,
+				#Input.get_action_strength("forward")-Input.get_action_strength("backward")).rotated(Vector3.UP,h_rot).normalized();
+		#
 	var h_rot = $Camroot/h.global_transform.basis.get_euler().y
 	direction = Vector3((Input.get_action_strength("left")-Input.get_action_strength("right")),
 				0,
 				Input.get_action_strength("forward")-Input.get_action_strength("backward")).rotated(Vector3.UP,h_rot).normalized();
+		
+	
 	if direction:
 		velocity.x = -direction.x * SPEED
 		velocity.z = -direction.z * SPEED
@@ -36,6 +43,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x,0,SPEED)
 		velocity.z = move_toward(velocity.z,0,SPEED)
 		update_animation_parameters(Vector2(direction.x, direction.z))
+	
+	$Mesh.rotation.y = lerp_angle($Mesh.rotation.y,atan2(direction.x,direction.z),delta*angular_acceleration)
 	move_and_slide()
 	pick_new_state()
 	flip_texture()
