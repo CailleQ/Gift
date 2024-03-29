@@ -73,4 +73,4 @@ shadow_blur = 1.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.518612, 1.36224, -2.18073)
 
 [node name="树" parent="Props" instance=ExtResource("5_kreac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41119, 1.75344, -0.0181746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39695, 1.67602, 0.0207211)

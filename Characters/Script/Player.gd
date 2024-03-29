@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
-const SPEED = 1.8
-const JUMP_VELOCITY = 3.5
+const SPEED = 1.0
+const JUMP_VELOCITY = 2.5
 #获取重力
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var direction = Vector3.FORWARD
 var angular_acceleration = 7
 
-
+@onready var animation_tree = $AnimationTree
 
 func _physics_process(delta):
 	#加入重力
