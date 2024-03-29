@@ -9,7 +9,13 @@ var direction = Vector3.FORWARD
 var angular_acceleration = 7
 
 @onready var animation_tree = $AnimationTree
+@onready var state_machine = animation_tree.get("parameters/playback")
+@onready var sprite_player = $Mesh/Sprite3D
 
+
+#func _ready():
+	#animation_tree.set("parameters/Idle/blend_position",Vector3.ZERO)
+	
 func _physics_process(delta):
 	#加入重力
 	if not is_on_floor():
@@ -29,31 +35,27 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x,0,SPEED)
 		velocity.z = move_toward(velocity.z,0,SPEED)
+		update_animation_parameters(Vector2(direction.x, direction.z))
 	move_and_slide()
+	pick_new_state()
+	flip_texture()
 	
- 
-##之前的脚本
-#@export var animation_frame = 0
-#const SPEED = 1.8
-#const JUMP_VELOCITY = 3.5
-#
-##获取重力
-#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-#
-#func _physics_process(delta):
-	##加入重力
-	#if not is_on_floor():
-		#velocity.y -= gravity* delta
-	##处理跳跃 // 可能暂时不实现跳跃功能
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y =JUMP_VELOCITY
-	##获取方向 以及 处理移动
-	#var input_dir = Input.get_vector("move_left","move_right","move_up","move_down")
-	#var direction = (transform.basis * Vector3(input_dir.x,0,input_dir.y)).normalized()
-	#if direction:
-		#velocity.x = direction.x * SPEED
-		#velocity.z = direction.z * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x,0,SPEED)
-		#velocity.z = move_toward(velocity.z,0,SPEED)
-	#move_and_slide()
+	
+#传入参数为 Vector2(direction.x, direction.z)
+func update_animation_parameters(move_input:Vector2):
+	if(move_input != Vector2.ZERO):
+		animation_tree.set("parameters/Idle/blend_position", move_input)
+		animation_tree.set("parameters/Run/blend_position", move_input)
+
+func pick_new_state():
+	if velocity != Vector3.ZERO:
+		state_machine.travel("Run")
+	else :
+		state_machine.travel("Idle")
+
+#待完成左右翻转 flip_h
+func flip_texture():
+	if Input.is_action_just_pressed("left") and is_on_floor():
+		sprite_player.flip_h = true
+	elif  Input.is_action_just_pressed("right") and is_on_floor():
+		sprite_player.flip_h = false
