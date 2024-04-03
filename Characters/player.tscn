@@ -176,7 +176,7 @@ script = ExtResource("3_bijyj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0585788, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Camroot/h/v"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374239, 1.21325)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.244712, 1.1878)
 attributes = SubResource("CameraAttributesPractical_88wxr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camroot/h/v/Camera3D"]

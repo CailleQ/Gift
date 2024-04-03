@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bup2as5u0ixd2" path="res://Objects/Texture/石板_1.png" id="1_ye82a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nay20"]
-size = Vector3(0.184006, 0.541981, 0.173599)
+size = Vector3(0.314312, 0.311522, 0.302433)
 
 [node name="石板_1" type="Sprite3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.22849, 0.404229, -0.36192)

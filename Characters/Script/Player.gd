@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity* delta
 	#处理跳跃 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y =JUMP_VELOCITY
 		#
 	#if Input.is_action_just_pressed("forward") ||Input.is_action_just_pressed("backward")||Input.is_action_just_pressed("left")||Input.is_action_just_pressed("right"):
@@ -29,7 +29,6 @@ func _physics_process(delta):
 		#direction = Vector3((Input.get_action_strength("left")-Input.get_action_strength("right")),
 				#0,
 				#Input.get_action_strength("forward")-Input.get_action_strength("backward")).rotated(Vector3.UP,h_rot).normalized();
-		#
 	var h_rot = $Camroot/h.global_transform.basis.get_euler().y
 	direction = Vector3((Input.get_action_strength("left")-Input.get_action_strength("right")),
 				0,
@@ -68,3 +67,7 @@ func flip_texture():
 		sprite_player.flip_h = true
 	elif  Input.is_action_just_pressed("right") and is_on_floor():
 		sprite_player.flip_h = false
+
+#碰撞事件  待处理
+func handle_collition():
+	pass

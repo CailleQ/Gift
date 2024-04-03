@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfoynnvx8xs7r"]
+
+[ext_resource type="Texture2D" uid="uid://coj0y622ps5cr" path="res://Objects/Texture/宝箱.png" id="1_7k6yi"]
+[ext_resource type="Script" path="res://Objects/Script/宝箱.gd" id="2_wygva"]
+[ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="3_ckoc4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nay20"]
+size = Vector3(0.133876, 0.311522, 0.17202)
+
+[node name="宝箱" type="Sprite3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.22849, 0.404229, -0.36192)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_7k6yi")
+vframes = 2
+script = ExtResource("2_wygva")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, -0.130848, 0.00287086)
+shape = SubResource("BoxShape3D_nay20")
+
+[node name="Actionable" parent="." instance=ExtResource("3_ckoc4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, -0.130848, 0.00287086)
+shape = SubResource("BoxShape3D_nay20")

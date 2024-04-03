@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ynuyta5rih6j"]
+
+[ext_resource type="Script" path="res://Objects/Script/Actionable.gd" id="1_1o6di"]
+
+[node name="Actionable" type="Area3D"]
+collision_layer = 16
+script = ExtResource("1_1o6di")

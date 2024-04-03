@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cul1osdt1muar"]
+[gd_scene load_steps=4 format=3 uid="uid://cul1osdt1muar"]
 
 [ext_resource type="Texture2D" uid="uid://cknin7dotag2k" path="res://Objects/Texture/树_0.png" id="1_v6vah"]
+[ext_resource type="Script" path="res://Objects/Script/树.gd" id="2_4qigp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxhit"]
 radius = 0.0490504
@@ -12,6 +13,7 @@ billboard = 2
 shaded = true
 alpha_cut = 2
 texture = ExtResource("1_v6vah")
+script = ExtResource("2_4qigp")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 
