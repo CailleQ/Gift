@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dv3oyjl218seo"]
+[gd_scene load_steps=33 format=3 uid="uid://dv3oyjl218seo"]
 
 [ext_resource type="Script" path="res://Characters/Script/Player.gd" id="1_hlana"]
 [ext_resource type="Shader" path="res://Characters/vignette.gdshader" id="2_0a17h"]
@@ -6,38 +6,7 @@
 [ext_resource type="Script" path="res://Characters/Script/Camera.gd" id="3_bijyj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4vjt"]
-size = Vector3(0.312531, 0.472351, 1)
-
-[sub_resource type="Animation" id="Animation_5oi2r"]
-resource_name = "Idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh/Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_3fv8p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh/Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+size = Vector3(0.0964985, 0.245407, 0.100034)
 
 [sub_resource type="Animation" id="Animation_fuvgn"]
 resource_name = "run"
@@ -55,11 +24,60 @@ tracks/0/keys = {
 "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19]
 }
 
+[sub_resource type="Animation" id="Animation_4toyd"]
+resource_name = "Jump"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [20, 21, 22]
+}
+
+[sub_resource type="Animation" id="Animation_3fv8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5oi2r"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_isbwj"]
 _data = {
-"Idle": SubResource("Animation_5oi2r"),
+"Idle": SubResource("Animation_fuvgn"),
+"Jump": SubResource("Animation_4toyd"),
 "RESET": SubResource("Animation_3fv8p"),
-"run": SubResource("Animation_fuvgn")
+"run": SubResource("Animation_5oi2r")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dphd4"]
@@ -86,6 +104,9 @@ blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iu4ue"]
+animation = &"Jump"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uki21"]
 animation = &"run"
@@ -119,12 +140,23 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wnyse"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w4u1m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2igpu"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_07pjg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1s5ix"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_atpxh"]
+states/End/position = Vector2(674, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_orjds")
 states/Idle/position = Vector2(360, 100)
+states/Jump/node = SubResource("AnimationNodeAnimation_iu4ue")
+states/Jump/position = Vector2(441, 223)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_q7q3b")
 states/Run/position = Vector2(531, 100)
-transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_bvutc"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_los2s"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_wnyse")]
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_bvutc"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_los2s"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_wnyse"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_w4u1m"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_2igpu"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_07pjg"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_1s5ix")]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_88wxr"]
 
@@ -134,21 +166,25 @@ shader_parameter/color = null
 shader_parameter/multiplier = 0.1
 shader_parameter/softness = 1.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1v07"]
+size = Vector3(0.0483973, 0.104141, 0.0504207)
+
 [node name="Player" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 script = ExtResource("1_hlana")
 
 [node name="Mesh" type="Node3D" parent="Player"]
 
 [node name="Sprite3D" type="Sprite3D" parent="Player/Mesh"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.000810603, -0.16161, 0.0663169)
 texture = ExtResource("2_niuas")
 hframes = 10
-vframes = 2
+vframes = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0243073, -0.163544, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0303357, -0.277044, -0.00259944)
 shape = SubResource("BoxShape3D_g4vjt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -183,6 +219,20 @@ attributes = SubResource("CameraAttributesPractical_88wxr")
 
 [node name="ColorRect" type="ColorRect" parent="Player/Camroot/h/v/Camera3D/CanvasLayer"]
 material = SubResource("ShaderMaterial_xe8lv")
+anchors_preset = -1
+anchor_right = 0.399479
+anchor_bottom = 0.402778
 offset_right = 1154.0
 offset_bottom = 645.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Marker3D" type="Marker3D" parent="Player"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="Actionable_Finder" type="Area3D" parent="Player/Marker3D"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Marker3D/Actionable_Finder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0130388, -0.10813, -0.00183536)
+shape = SubResource("BoxShape3D_r1v07")

@@ -9,8 +9,7 @@ var h_sensitivity = 0.1
 var v_sensitivity = 0.1
 var h_acceleration = 10
 var v_acceleration = 10
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	#$h/v/Camera3D.add_exception(get_parent())
 		
 func _input(event):

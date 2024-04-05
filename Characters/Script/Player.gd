@@ -1,20 +1,23 @@
 extends CharacterBody3D
 
-var SPEED = 1.0
-const JUMP_VELOCITY = 2.5
+@export var SPEED = 5.5
+const JUMP_VELOCITY = 3.0
 #获取重力
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var direction = Vector3.FORWARD
 var angular_acceleration = 7
 
+@onready var sprite_player = $Mesh/Sprite3D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
-@onready var sprite_player = $Mesh/Sprite3D
+
+@onready var actionable_finder : Area3D = $Marker3D/Actionable_Finder
 
 
-#func _ready():
-	#animation_tree.set("parameters/Idle/blend_position",Vector3.ZERO)
+func _ready():
+	animation_tree.active = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _physics_process(delta):
 	#加入重力
@@ -54,9 +57,13 @@ func update_animation_parameters(move_input:Vector2):
 	if(move_input != Vector2.ZERO):
 		animation_tree.set("parameters/Idle/blend_position", move_input)
 		animation_tree.set("parameters/Run/blend_position", move_input)
+		animation_tree.set("parameters/Jump/blend_position", move_input)
 
 func pick_new_state():
-	if velocity != Vector3.ZERO:
+	#跳跃动画未成功
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		state_machine.travel("Jump")
+	elif velocity != Vector3.ZERO:
 		state_machine.travel("Run")
 	else :
 		state_machine.travel("Idle")
@@ -68,6 +75,11 @@ func flip_texture():
 	elif  Input.is_action_just_pressed("right") and is_on_floor():
 		sprite_player.flip_h = false
 
-#碰撞事件  待处理
-func handle_collition():
-	pass
+#通过actionable来检测碰撞，并执行actionable中的action函数
+#想想办法 获取到碰撞到的物体id
+func _unhandled_input(event)->void:
+	if Input.is_action_just_pressed("inter_action"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return

@@ -1,0 +1,13 @@
+~ start
+
+会说话的宝箱: [[Hi|Hello|Howdy]], this is some dialogue.
+会说话的宝箱: Here are some choices.
+- First one
+	会说话的宝箱: You picked the first one.
+- Second one
+	会说话的宝箱: You picked the second one.
+- Start again => start
+- End the conversation => END
+会说话的宝箱: For more information see the online documentation.
+
+=> END

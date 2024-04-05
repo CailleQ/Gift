@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfoynnvx8xs7r"]
+[gd_scene load_steps=7 format=3 uid="uid://dfoynnvx8xs7r"]
 
 [ext_resource type="Texture2D" uid="uid://coj0y622ps5cr" path="res://Objects/Texture/宝箱.png" id="1_7k6yi"]
 [ext_resource type="Script" path="res://Objects/Script/宝箱.gd" id="2_wygva"]
 [ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="3_ckoc4"]
+[ext_resource type="Resource" uid="uid://ca7b62nmneqwx" path="res://Dialogue/test.dialogue" id="4_574tj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nay20"]
 size = Vector3(0.133876, 0.311522, 0.17202)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndteu"]
+size = Vector3(0.17627, 0.315979, 0.21582)
+
 [node name="宝箱" type="Sprite3D"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.22849, 0.404229, -0.36192)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.22849, 0.404229, -0.36192)
 billboard = 2
 shaded = true
 alpha_cut = 2
@@ -23,7 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, -0.130848, 0.00287
 shape = SubResource("BoxShape3D_nay20")
 
 [node name="Actionable" parent="." instance=ExtResource("3_ckoc4")]
+dialogue_resource = ExtResource("4_574tj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, -0.130848, 0.00287086)
-shape = SubResource("BoxShape3D_nay20")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119631, -0.096344, -0.000487924)
+shape = SubResource("BoxShape3D_ndteu")
+
+[node name="Node3D" type="Node3D" parent="."]

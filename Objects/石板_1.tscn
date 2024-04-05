@@ -1,19 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj6egi81kuki"]
 
-[ext_resource type="Texture2D" uid="uid://bup2as5u0ixd2" path="res://Objects/Texture/石板_1.png" id="1_ye82a"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gl2ih"]
+load_path = "res://.godot/imported/石板_1.png-c0db45a167affec9050f3ff59d546a8d.s3tc.ctex"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nay20"]
-size = Vector3(0.314312, 0.311522, 0.302433)
+size = Vector3(0.276698, 0.496215, 0.280977)
 
 [node name="石板_1" type="Sprite3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.22849, 0.404229, -0.36192)
 billboard = 2
 shaded = true
 alpha_cut = 2
-texture = ExtResource("1_ye82a")
+texture = SubResource("CompressedTexture2D_gl2ih")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00609601, -0.0585842, 0.00850683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00055933, -0.0848907, -0.00222105)
 shape = SubResource("BoxShape3D_nay20")

@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl7qveiu1g3kl"]
+[gd_scene load_steps=7 format=3 uid="uid://bl7qveiu1g3kl"]
 
 [ext_resource type="Texture2D" uid="uid://dbnv7xwj1jj5i" path="res://Objects/Texture/雕像.png" id="1_vrse0"]
+[ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="2_krdny"]
+[ext_resource type="Script" path="res://Objects/Script/雕像.gd" id="2_kxkqu"]
+[ext_resource type="Resource" uid="uid://de8kfucuypb15" path="res://Dialogue/雕像.dialogue" id="3_k1uqf"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_72d7q"]
-size = Vector3(0.173279, 0.730801, 0.196838)
+[sub_resource type="BoxShape3D" id="BoxShape3D_wtvp5"]
+size = Vector3(0.28833, 0.648895, 0.293945)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_684dx"]
+size = Vector3(0.409119, 0.60376, 0.402481)
 
 [node name="雕像" type="Sprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22103, 0.336509, -0.349381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107707, 0.149575, 0.0100368)
 billboard = 2
 shaded = true
 alpha_cut = 2
 texture = ExtResource("1_vrse0")
+script = ExtResource("2_kxkqu")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035553, 0.0115072, 0.0274473)
-shape = SubResource("BoxShape3D_72d7q")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0098877, -0.00621033, 0.000488281)
+shape = SubResource("BoxShape3D_wtvp5")
+
+[node name="Actionable" parent="." instance=ExtResource("2_krdny")]
+dialogue_resource = ExtResource("3_k1uqf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233459, 0.0494385, -8.38935e-05)
+shape = SubResource("BoxShape3D_684dx")
