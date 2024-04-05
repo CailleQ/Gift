@@ -8,7 +8,6 @@ extends Area3D
 
 func action()->void:
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource,dialogue_start)
-	#print(parent)	
 	#强制要求 父节点拥有operat()函数
 	#勿忘添加，无事件可写 便加pass
 	parent.operat()

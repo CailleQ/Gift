@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var SPEED = 5.5
+@export var SPEED = 1.5
 const JUMP_VELOCITY = 3.0
 #获取重力
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -68,7 +68,7 @@ func pick_new_state():
 	else :
 		state_machine.travel("Idle")
 
-#待完成左右翻转 flip_h
+#左右翻转 flip_h
 func flip_texture():
 	if Input.is_action_just_pressed("left") and is_on_floor():
 		sprite_player.flip_h = true
@@ -76,7 +76,6 @@ func flip_texture():
 		sprite_player.flip_h = false
 
 #通过actionable来检测碰撞，并执行actionable中的action函数
-#想想办法 获取到碰撞到的物体id
 func _unhandled_input(event)->void:
 	if Input.is_action_just_pressed("inter_action"):
 		var actionables = actionable_finder.get_overlapping_areas()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyn4rbvv4id54"]
+[gd_scene load_steps=7 format=3 uid="uid://dyn4rbvv4id54"]
 
 [ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="1_4x0js"]
 [ext_resource type="Script" path="res://Characters/Script/古巨基.gd" id="1_wqln5"]
+[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/古巨基.dialogue" id="3_n2ara"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yjjfh"]
 load_path = "res://.godot/imported/gba_cactuar.png-f3b348c8d2505c18fd17a49ff32812b9.s3tc.ctex"
@@ -27,6 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474855, -0.0319824, 0)
 shape = SubResource("BoxShape3D_d1ioc")
 
 [node name="Actionable" parent="." instance=ExtResource("1_4x0js")]
+dialogue_resource = ExtResource("3_n2ara")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0768437, 0.108978, -0.015667)
