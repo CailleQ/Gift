@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://le8opkldp2ot"]
+
+[ext_resource type="Texture2D" uid="uid://cd2r1pvgshu77" path="res://Objects/Texture/门.png" id="1_tcbge"]
+[ext_resource type="Script" path="res://Objects/Script/门.gd" id="2_qqipy"]
+[ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="3_rqo8p"]
+[ext_resource type="Resource" uid="uid://de8kfucuypb15" path="res://Dialogue/雕像.dialogue" id="4_e4cwo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xelt7"]
+size = Vector3(2.34174, 1.11285, 0.454346)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvk2g"]
+size = Vector3(2.6964, 1.31488, 0.632385)
+
+[node name="门" type="Sprite3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.0107707, 0.149575, 0.0100368)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_tcbge")
+vframes = 2
+script = ExtResource("2_qqipy")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0729785, 0.256427, -0.00378418)
+shape = SubResource("BoxShape3D_xelt7")
+
+[node name="Actionable" parent="." instance=ExtResource("3_rqo8p")]
+dialogue_resource = ExtResource("4_e4cwo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0722086, 0.37619, 0.0449524)
+shape = SubResource("BoxShape3D_qvk2g")

@@ -1,9 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bl7qveiu1g3kl"]
 
-[ext_resource type="Texture2D" uid="uid://dbnv7xwj1jj5i" path="res://Objects/Texture/雕像.png" id="1_vrse0"]
 [ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="2_krdny"]
 [ext_resource type="Script" path="res://Objects/Script/雕像.gd" id="2_kxkqu"]
 [ext_resource type="Resource" uid="uid://de8kfucuypb15" path="res://Dialogue/雕像.dialogue" id="3_k1uqf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kermp"]
+load_path = "res://.godot/imported/雕像.png-0874c2d9abb8a37711bca6b94e21b9ac.s3tc.ctex"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wtvp5"]
 size = Vector3(0.28833, 0.648895, 0.293945)
@@ -16,7 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107707, 0.149575, 0.010036
 billboard = 2
 shaded = true
 alpha_cut = 2
-texture = ExtResource("1_vrse0")
+texture = SubResource("CompressedTexture2D_kermp")
 script = ExtResource("2_kxkqu")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
