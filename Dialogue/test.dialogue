@@ -1,7 +1,11 @@
 ~ start
 
-会说话的宝箱: [[Hi|Hello|Howdy]], this is some dialogue.
-会说话的宝箱: Here are some choices.
+会说话的宝箱: [[Hi|Hello|Howdy]],别这么惊讶,不是所有会说话的宝箱都是宝箱怪,阿巴阿巴.
+会说话的宝箱: .
+if cheast_status =="close":
+	会说话的宝箱: Here are some choices.
+	- 我想再跟你聊聊.
+		set cheast_status = "open"
 - First one
 	会说话的宝箱: You picked the first one.
 - Second one
@@ -9,5 +13,8 @@
 - Start again => start
 - End the conversation => END
 会说话的宝箱: For more information see the online documentation.
+
+
+
 
 => END

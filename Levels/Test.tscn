@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.4, -9)
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.00114554, 1.18961, -0.899985)
 
 [node name="宝箱" parent="Props" instance=ExtResource("8_4xdwq")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.19642, 1.18738, -16.791)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.19642, 1.18738, -1.88759)
 
 [node name="树1" parent="Props" instance=ExtResource("6_hbmi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39695, 1.67602, 0.0207211)

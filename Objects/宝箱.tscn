@@ -9,7 +9,7 @@
 size = Vector3(0.133876, 0.311522, 0.17202)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndteu"]
-size = Vector3(0.17627, 0.315979, 0.21582)
+size = Vector3(0.37561, 0.315979, 0.430176)
 
 [node name="宝箱" type="Sprite3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.22849, 0.404229, -0.36192)
@@ -30,7 +30,5 @@ shape = SubResource("BoxShape3D_nay20")
 dialogue_resource = ExtResource("4_574tj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119631, -0.096344, -0.000487924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00872612, -0.096344, 0.0031743)
 shape = SubResource("BoxShape3D_ndteu")
-
-[node name="Node3D" type="Node3D" parent="."]
