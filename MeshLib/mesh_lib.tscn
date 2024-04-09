@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cvk84p4qiahig"]
+[gd_scene load_steps=31 format=3 uid="uid://cvk84p4qiahig"]
 
 [ext_resource type="Texture2D" uid="uid://cpbelrg3sjgem" path="res://素材/Pixel Art Top Down - BasicTexture/Flower_0.png" id="2_6nboy"]
 [ext_resource type="Texture2D" uid="uid://dfdjo1vyggj8y" path="res://素材/Pixel Art Top Down - BasicTexture/Flower_1.png" id="3_rl305"]
@@ -11,6 +11,7 @@ load_path = "res://.godot/imported/Grass_0.png-90c88e5ce200cb9082df83e242f36ecd.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngo5k"]
 albedo_texture = SubResource("CompressedTexture2D_texop")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_wa68b"]
 material = SubResource("StandardMaterial3D_ngo5k")
@@ -23,6 +24,7 @@ load_path = "res://.godot/imported/Grass_1.png-86a91c1231744368272c5f4b15a1a189.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u000c"]
 albedo_texture = SubResource("CompressedTexture2D_6assd")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_3ejnt"]
 lightmap_size_hint = Vector2i(14, 21)
@@ -34,6 +36,7 @@ load_path = "res://.godot/imported/Wall_0.png-ce1dcabad6f021a84de231b3eac7c003.s
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d45bq"]
 albedo_texture = SubResource("CompressedTexture2D_6ql5h")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_xxg2k"]
 material = SubResource("StandardMaterial3D_d45bq")
@@ -44,6 +47,7 @@ load_path = "res://.godot/imported/Grass_2.png-4e13d9bc1d732148a82a0624e26c740f.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kygxy"]
 albedo_texture = SubResource("CompressedTexture2D_bn8kx")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_4q232"]
 material = SubResource("StandardMaterial3D_kygxy")
@@ -51,6 +55,7 @@ material = SubResource("StandardMaterial3D_kygxy")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fptm4"]
 albedo_texture = ExtResource("2_6nboy")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_81bsu"]
 material = SubResource("StandardMaterial3D_fptm4")
@@ -58,6 +63,7 @@ material = SubResource("StandardMaterial3D_fptm4")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enhja"]
 albedo_texture = ExtResource("3_rl305")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_qupuy"]
 material = SubResource("StandardMaterial3D_enhja")
@@ -65,6 +71,7 @@ material = SubResource("StandardMaterial3D_enhja")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jjbe"]
 albedo_texture = ExtResource("4_aqt3c")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_oltk7"]
 material = SubResource("StandardMaterial3D_2jjbe")
@@ -72,21 +79,28 @@ material = SubResource("StandardMaterial3D_2jjbe")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se3y7"]
 albedo_texture = ExtResource("5_lkw2q")
 uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_65br3"]
 material = SubResource("StandardMaterial3D_se3y7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjo68"]
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_25p6k"]
 material = SubResource("StandardMaterial3D_kjo68")
 
-[sub_resource type="BoxMesh" id="BoxMesh_pi8rh"]
+[sub_resource type="BoxMesh" id="BoxMesh_ymfm3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dspp"]
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnfym"]
 
 [node name="MeshLib" type="Node3D"]
 
 [node name="Grass_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00471532, -0.00363374, 0.0016489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21358, -0.00363374, 0.0016489)
 mesh = SubResource("BoxMesh_wa68b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Grass_1"]
@@ -95,7 +109,7 @@ mesh = SubResource("BoxMesh_wa68b")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Grass_0" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56206, 0.357296, 0.307446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0142044, -0.0288743, 0.0111554)
 mesh = SubResource("BoxMesh_3ejnt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Grass_0"]
@@ -104,7 +118,7 @@ mesh = SubResource("BoxMesh_3ejnt")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16242, 0.0935396, -0.858434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18713, -0.00868189, -0.0169685)
 mesh = SubResource("BoxMesh_xxg2k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
@@ -113,7 +127,7 @@ mesh = SubResource("BoxMesh_xxg2k")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Grass_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80238, -0.874672, 2.17058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4405, -0.0114682, 0.00173235)
 mesh = SubResource("BoxMesh_4q232")
 skeleton = NodePath("../Grass_1")
 
@@ -123,7 +137,7 @@ skeleton = NodePath("../Grass_1")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Flower_0" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86215, -0.812715, -1.00889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85322, 0.0504889, -0.0015018)
 mesh = SubResource("BoxMesh_81bsu")
 skeleton = NodePath("../Grass_1")
 
@@ -133,7 +147,7 @@ skeleton = NodePath("../Grass_1")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Flower_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47814, 1.21949, -1.55076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64252, 0.0496215, -0.010049)
 mesh = SubResource("BoxMesh_qupuy")
 skeleton = NodePath("../Grass_1")
 
@@ -143,7 +157,7 @@ skeleton = NodePath("../Grass_1")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Flower_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43549, 0.290128, 1.43081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46662, 0.0288951, -0.00323665)
 mesh = SubResource("BoxMesh_oltk7")
 skeleton = NodePath("../Grass_1")
 
@@ -153,7 +167,7 @@ skeleton = NodePath("../Grass_1")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Flower_3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379197, 1.09459, 1.43326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16444, 0.00422716, -0.000786662)
 mesh = SubResource("BoxMesh_65br3")
 skeleton = NodePath("../Grass_1")
 
@@ -163,7 +177,7 @@ skeleton = NodePath("../Grass_1")
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="AirWall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16242, 0.0935396, -0.858434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07292, 0.0935396, -0.0288203)
 mesh = SubResource("BoxMesh_25p6k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AirWall"]
@@ -171,11 +185,12 @@ mesh = SubResource("BoxMesh_25p6k")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AirWall/StaticBody3D"]
 shape = SubResource("BoxShape3D_h2pmy")
 
-[node name="小柱子" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16242, 0.0935396, 2.22715)
-mesh = SubResource("BoxMesh_pi8rh")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50362, 0, -0.00780201)
+mesh = SubResource("BoxMesh_ymfm3")
+surface_material_override/0 = SubResource("StandardMaterial3D_6dspp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="小柱子"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="小柱子/StaticBody3D"]
-shape = SubResource("BoxShape3D_h2pmy")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_jnfym")
