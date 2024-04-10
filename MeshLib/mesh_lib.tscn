@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cvk84p4qiahig"]
+[gd_scene load_steps=36 format=3 uid="uid://cvk84p4qiahig"]
 
 [ext_resource type="Texture2D" uid="uid://cpbelrg3sjgem" path="res://素材/Pixel Art Top Down - BasicTexture/Flower_0.png" id="2_6nboy"]
 [ext_resource type="Texture2D" uid="uid://dfdjo1vyggj8y" path="res://素材/Pixel Art Top Down - BasicTexture/Flower_1.png" id="3_rl305"]
@@ -31,16 +31,27 @@ texture_filter = 0
 lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_u000c")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ql5h"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rtv5m"]
 load_path = "res://.godot/imported/Wall_0.png-ce1dcabad6f021a84de231b3eac7c003.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d45bq"]
-albedo_texture = SubResource("CompressedTexture2D_6ql5h")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rk48n"]
+albedo_texture = SubResource("CompressedTexture2D_rtv5m")
 uv1_scale = Vector3(3, 2, 1)
 texture_filter = 0
 
-[sub_resource type="BoxMesh" id="BoxMesh_xxg2k"]
-material = SubResource("StandardMaterial3D_d45bq")
+[sub_resource type="BoxMesh" id="BoxMesh_bgyfr"]
+material = SubResource("StandardMaterial3D_rk48n")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aud5w"]
+load_path = "res://.godot/imported/Wall_0.png-ce1dcabad6f021a84de231b3eac7c003.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wln7t"]
+albedo_texture = SubResource("CompressedTexture2D_aud5w")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_txp73"]
+material = SubResource("StandardMaterial3D_wln7t")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bn8kx"]
 load_path = "res://.godot/imported/Grass_2.png-4e13d9bc1d732148a82a0624e26c740f.s3tc.ctex"
@@ -85,20 +96,22 @@ texture_filter = 0
 [sub_resource type="BoxMesh" id="BoxMesh_65br3"]
 material = SubResource("StandardMaterial3D_se3y7")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjo68"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e31h"]
 texture_filter = 0
 
-[sub_resource type="BoxMesh" id="BoxMesh_25p6k"]
-material = SubResource("StandardMaterial3D_kjo68")
+[sub_resource type="BoxMesh" id="BoxMesh_cusxp"]
+material = SubResource("StandardMaterial3D_7e31h")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jfumu"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_qh1xt"]
 left_to_right = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyu1f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j18o3"]
 albedo_texture = ExtResource("5_oy4ue")
 uv1_scale = Vector3(3, 2, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tngjw"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5h558"]
 data = PackedVector3Array(0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="MeshLib" type="Node3D"]
@@ -123,11 +136,20 @@ shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18713, -0.00868189, -0.0169685)
-mesh = SubResource("BoxMesh_xxg2k")
+mesh = SubResource("BoxMesh_bgyfr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("BoxShape3D_h2pmy")
+
+[node name="Wall_Dispare" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66692, -0.00868189, -0.0169685)
+mesh = SubResource("BoxMesh_txp73")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Dispare"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Dispare/StaticBody3D"]
 shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="Grass_2" type="MeshInstance3D" parent="."]
@@ -182,19 +204,28 @@ shape = SubResource("BoxShape3D_h2pmy")
 
 [node name="AirWall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07292, 0.0935396, -0.0288203)
-mesh = SubResource("BoxMesh_25p6k")
+mesh = SubResource("BoxMesh_cusxp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AirWall"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AirWall/StaticBody3D"]
 shape = SubResource("BoxShape3D_h2pmy")
 
+[node name="AirWall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23751, 0.0935396, -0.0288203)
+mesh = SubResource("ArrayMesh_jfumu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AirWall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AirWall2/StaticBody3D"]
+shape = SubResource("BoxShape3D_h2pmy")
+
 [node name="阶梯_0" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50362, 0, -0.00780201)
 mesh = SubResource("PrismMesh_qh1xt")
-surface_material_override/0 = SubResource("StandardMaterial3D_nyu1f")
+surface_material_override/0 = SubResource("StandardMaterial3D_j18o3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="阶梯_0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="阶梯_0/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_tngjw")
+shape = SubResource("ConcavePolygonShape3D_5h558")

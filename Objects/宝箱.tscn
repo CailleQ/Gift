@@ -6,10 +6,10 @@
 [ext_resource type="Resource" uid="uid://ca7b62nmneqwx" path="res://Dialogue/test.dialogue" id="4_574tj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nay20"]
-size = Vector3(0.133876, 0.311522, 0.17202)
+size = Vector3(0.519359, 0.709114, 0.432977)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndteu"]
-size = Vector3(0.37561, 0.315979, 0.430176)
+size = Vector3(0.738434, 0.411774, 0.728516)
 
 [node name="宝箱" type="Sprite3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.22849, 0.404229, -0.36192)
@@ -24,12 +24,12 @@ script = ExtResource("2_wygva")
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106201, -0.130848, 0.00287086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0313587, 0.0679479, -0.00316238)
 shape = SubResource("BoxShape3D_nay20")
 
 [node name="Actionable" parent="." instance=ExtResource("3_ckoc4")]
 dialogue_resource = ExtResource("4_574tj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00872612, -0.096344, 0.0031743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117054, -0.0484467, -0.013427)
 shape = SubResource("BoxShape3D_ndteu")

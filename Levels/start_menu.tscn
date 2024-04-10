@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0113era4udtg"]
+
+[ext_resource type="Script" path="res://Levels/Script/start_menu.gd" id="1_0c7s7"]
+
+[node name="Start Menu" type="Node2D"]
+script = ExtResource("1_0c7s7")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 871.0
+offset_top = 668.0
+offset_right = 986.0
+offset_bottom = 753.0
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 829.0
+offset_right = 990.0
+offset_bottom = 912.0
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

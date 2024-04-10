@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var SPEED = 1.5
-const JUMP_VELOCITY = 3.0
+const JUMP_VELOCITY = 3.5
 #获取重力
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -20,6 +20,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _physics_process(delta):
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 	#加入重力
 	if not is_on_floor():
 		velocity.y -= gravity* delta

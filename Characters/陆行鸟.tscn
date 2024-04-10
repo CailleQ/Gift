@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://clctjo0keafa5"]
+
+[ext_resource type="Script" path="res://Characters/Script/装睡的龙.gd" id="1_8cohp"]
+[ext_resource type="Texture2D" uid="uid://cupjrw2hplr6q" path="res://Characters/Texture/pngsucai_6835155_fb9c3b.png" id="1_2311u"]
+[ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="2_x3dac"]
+[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/古巨基.dialogue" id="3_8pxkh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slskj"]
+size = Vector3(6.95958, 8.10681, 7.64789)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4wu7"]
+size = Vector3(11, 9.40694, 10)
+
+[node name="陆行鸟" type="Sprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.22849, 0.404229, -0.36192)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_2311u")
+script = ExtResource("1_8cohp")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158166, 0.148132, -0.114105)
+shape = SubResource("BoxShape3D_slskj")
+
+[node name="Actionable" parent="." instance=ExtResource("2_x3dac")]
+dialogue_resource = ExtResource("3_8pxkh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.470735, 0.772576, 0.209358)
+shape = SubResource("BoxShape3D_h4wu7")
