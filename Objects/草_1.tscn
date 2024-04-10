@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://mo1whht31dvf"]
+
+[ext_resource type="Texture2D" uid="uid://d3r1b3al0p1e8" path="res://素材/Pixel Art Top Down - BasicTexture/草_1.png" id="1_wiss7"]
+
+[node name="草_1" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22849, 0.404229, -0.36192)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_wiss7")
+hframes = 4

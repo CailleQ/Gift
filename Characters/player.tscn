@@ -179,6 +179,7 @@ script = ExtResource("1_hlana")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player/Mesh"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.000810603, -0.16161, 0.0663169)
+texture_filter = 0
 texture = ExtResource("2_niuas")
 hframes = 10
 vframes = 3

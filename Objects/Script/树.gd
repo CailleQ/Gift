@@ -4,4 +4,3 @@ extends Sprite3D
 
 func handle_collipse():
 	pass
-	

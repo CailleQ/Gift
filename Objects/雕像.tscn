@@ -18,12 +18,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107707, 0.149575, 0.010036
 billboard = 2
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = SubResource("CompressedTexture2D_kermp")
 script = ExtResource("2_kxkqu")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0098877, -0.00621033, 0.000488281)
 shape = SubResource("BoxShape3D_wtvp5")
 

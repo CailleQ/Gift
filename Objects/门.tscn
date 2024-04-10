@@ -16,13 +16,14 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.0107707, 0.149575, 0.
 billboard = 2
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = ExtResource("1_tcbge")
 vframes = 2
 script = ExtResource("2_qqipy")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0729785, 0.256427, -0.00378418)
 shape = SubResource("BoxShape3D_xelt7")
 

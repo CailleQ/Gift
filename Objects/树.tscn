@@ -12,10 +12,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22849, 0.404229, -0.36192)
 billboard = 2
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = ExtResource("1_v6vah")
 script = ExtResource("2_4qigp")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("CapsuleShape3D_wxhit")

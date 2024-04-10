@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0leshvf5mna5"]
+
+[ext_resource type="Texture2D" uid="uid://beufxt2coqjjx" path="res://素材/Pixel Art Top Down - BasicTexture/灌木_1.png" id="1_20vdb"]
+
+[node name="灌木_1" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22849, 0.404229, -0.36192)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_20vdb")
