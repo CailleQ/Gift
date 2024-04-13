@@ -1,9 +1,12 @@
 extends Sprite3D
-var be_opened = 0
-@onready var colli = get_node("StaticBody3D/CollisionShape3D")
 
+@onready var colli = get_node("StaticBody3D/CollisionShape3D")
+ 
 func operat():
-	if not be_opened and Input.is_action_just_pressed("inter_action"):
+	pass
+func _physics_process(delta):
+	var can_open = get_node("/root/State").can_open
+	#print(can_open)
+	if  can_open == 1:
 		frame = 1
-		be_opened =1 
 		colli.disabled = 1

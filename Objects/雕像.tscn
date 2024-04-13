@@ -30,6 +30,7 @@ shape = SubResource("BoxShape3D_wtvp5")
 
 [node name="Actionable" parent="." instance=ExtResource("2_krdny")]
 dialogue_resource = ExtResource("3_k1uqf")
+dialogue_start = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0233459, 0.0494385, -8.38935e-05)

@@ -1,10 +1,17 @@
 ~ start
-强大的门: 你好，我是掌管通行权利的门。
-if door_pass_status =="no" :
-	强大的门: 如果你没获得允许的话，我是不能放你过去的。
-elif door_pass_status =="ok" :
-	强大的门: 好吧，今天居然是你的生日，祝你生日快乐！
-	set door_words_status = "saied"
-if door_words_status == "saied" :
-	强大的门: 祝你生日快乐~ 祝你生日快乐！
+if door_words == 0 :
+	if door_status == 0
+		固执的门: 干嘛！ 我一年才开一次喔！
+		固执的门: 那个雕像一直在烦我，真讨厌！
+	- 但是我今天过生日喔！
+		固执的门: ！！！
+		固执的门: 那好吧，就这一次喔！
+		set door_words = 1
+		set door_status = 1
+		set can_open = 1
+	- 诶——，让我过去嘛让我过去嘛
+		固执的门: 达咩！达咩！达咩！
+else :
+	固执的门: 祝你生日快乐~ 祝你生日快乐!
+
 => END

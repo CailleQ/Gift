@@ -1,13 +1,35 @@
-~ start
+~ 雕像A
 #雕像的对话 待修改
-不知是谁的形象的雕像: [[Hi|Hello|Howdy]], this is some dialogue.
-不知是谁的形象的雕像: Here are some choices.
-- First one
-	不知是谁的形象的雕像: You picked the first one.
-- Second one
-	不知是谁的形象的雕像: You picked the second one.
-- Start again => start
-- End the conversation => END
-不知是谁的形象的雕像: For more information see the online documentation.
+if ignore == 0
+	雕像A: .........
+	雕像A: ..................
+	雕像A: oh [[Hi|Hello|Howdy]],太久没人来过了，我刚刚睡着了吗.
+
+- 是的，睡得口水都留下来了! 
+	雕像A: 我不信,我们雕像才不会流口水。
+	=> test
+- 但你是个雕像不是嘛
+	雕像A: ...... 干嘛！ 雕像就不能睡觉了吗！
+	=> test
+- 不理他 
+	雕像A: 那我也不理你了! 反正我就是个雕像！
+	set ignore = 1
+	=> END
+else :
+	雕像A: 不理你，不理你!
+	雕像A: 不理你，不理你，不理你！
+	雕像A: 不理你，不理你，不理你，不理你！
+	=> test
+
+~ test
+雕像A: Anyway,看到我边上的门了嘛，他很奇怪吧
+雕像A: 明明那么小，但就是过不去诶
+固执的门: 哼！
+雕像A: 他真的很固执诶，怎么都不肯放我过去，真讨厌。
+=> END
+
+
+~ 雕像B
+雕像B : asdadasdd
 
 => END

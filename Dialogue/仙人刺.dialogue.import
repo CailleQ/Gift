@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c8nk7pe1363f6"
+path="res://.godot/imported/仙人刺.dialogue-a7a15bbb4bd622403b565970184e784d.tres"
+
+[deps]
+
+source_file="res://Dialogue/仙人刺.dialogue"
+dest_files=["res://.godot/imported/仙人刺.dialogue-a7a15bbb4bd622403b565970184e784d.tres"]
+
+[params]
+
+defaults=true

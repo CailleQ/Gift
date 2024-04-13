@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="1_4x0js"]
 [ext_resource type="Script" path="res://Characters/Script/古巨基.gd" id="1_wqln5"]
-[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/古巨基.dialogue" id="3_n2ara"]
+[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/仙人刺.dialogue" id="3_cnh88"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yjjfh"]
 load_path = "res://.godot/imported/gba_cactuar.png-f3b348c8d2505c18fd17a49ff32812b9.s3tc.ctex"
@@ -13,8 +13,8 @@ size = Vector3(1.43384, 1.59229, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h4wu7"]
 size = Vector3(1.94177, 1.84283, 1.54995)
 
-[node name="古巨基" type="Sprite3D"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.22849, 0.404229, -0.36192)
+[node name="仙人刺" type="Sprite3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.22849, 0.404229, -0.36192)
 billboard = 2
 shaded = true
 alpha_cut = 2
@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474855, -0.0319824, 0)
 shape = SubResource("BoxShape3D_d1ioc")
 
 [node name="Actionable" parent="." instance=ExtResource("1_4x0js")]
-dialogue_resource = ExtResource("3_n2ara")
+dialogue_resource = ExtResource("3_cnh88")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0768437, 0.108978, -0.015667)

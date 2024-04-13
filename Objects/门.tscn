@@ -13,7 +13,6 @@ size = Vector3(2.6964, 1.31488, 0.632385)
 
 [node name="门" type="Sprite3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.0107707, 0.149575, 0.0100368)
-billboard = 2
 shaded = true
 alpha_cut = 2
 texture_filter = 0

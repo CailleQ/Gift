@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Characters/Script/装睡的龙.gd" id="1_8cohp"]
 [ext_resource type="Texture2D" uid="uid://cupjrw2hplr6q" path="res://Characters/Texture/pngsucai_6835155_fb9c3b.png" id="1_2311u"]
 [ext_resource type="PackedScene" uid="uid://ynuyta5rih6j" path="res://Objects/actionable.tscn" id="2_x3dac"]
-[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/古巨基.dialogue" id="3_8pxkh"]
+[ext_resource type="Resource" uid="uid://c8nk7pe1363f6" path="res://Dialogue/仙人刺.dialogue" id="3_8pxkh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slskj"]
 size = Vector3(6.95958, 8.10681, 7.64789)

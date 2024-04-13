@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ca7b62nmneqwx"
+path="res://.godot/imported/宝箱.dialogue-0b444ef06db1c06d688c2517854b33a4.tres"
+
+[deps]
+
+source_file="res://Dialogue/宝箱.dialogue"
+dest_files=["res://.godot/imported/宝箱.dialogue-0b444ef06db1c06d688c2517854b33a4.tres"]
+
+[params]
+
+defaults=true

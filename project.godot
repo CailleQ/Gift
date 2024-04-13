@@ -95,7 +95,7 @@ quit={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/test.dialogue", "res://Dialogue/雕像.dialogue", "res://Dialogue/古巨基.dialogue", "res://Dialogue/门.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/雕像.dialogue", "res://Dialogue/门.dialogue", "res://Dialogue/宝箱.dialogue", "res://Dialogue/仙人刺.dialogue")
 
 [layer_names]
 
