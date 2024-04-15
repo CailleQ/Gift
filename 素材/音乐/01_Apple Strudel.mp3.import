@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dt4sjhgc4fjk8"
+path="res://.godot/imported/01_Apple Strudel.mp3-0e180895a0d37b85d51613c276d1be74.mp3str"
+
+[deps]
+
+source_file="res://素材/音乐/01_Apple Strudel.mp3"
+dest_files=["res://.godot/imported/01_Apple Strudel.mp3-0e180895a0d37b85d51613c276d1be74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

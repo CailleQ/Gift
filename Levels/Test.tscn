@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dcl66frlpaoe5"]
+[gd_scene load_steps=28 format=3 uid="uid://dcl66frlpaoe5"]
 
 [ext_resource type="Script" path="res://Levels/Script/world.gd" id="1_u0w0i"]
 [ext_resource type="MeshLibrary" uid="uid://8tfn5kp8qi8l" path="res://MeshLib/MeshLib.tres" id="2_6j7sa"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://mo1whht31dvf" path="res://Objects/草_1.tscn" id="13_p8aym"]
 [ext_resource type="PackedScene" uid="uid://dgfljxkr0ot6v" path="res://Objects/草_2.tscn" id="14_ae2oa"]
 [ext_resource type="PackedScene" uid="uid://c446taw3u2djf" path="res://Objects/路标_右.tscn" id="19_xm8kt"]
+[ext_resource type="AudioStream" uid="uid://cb3e0xivq8sj7" path="res://素材/音乐/03_Ancient Question.mp3" id="23_4ndbg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gri25"]
 panorama = ExtResource("4_ms760")
@@ -244,3 +245,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05213, 1.02915, -16.5703)
 
 [node name="草_11" parent="Props/草" instance=ExtResource("14_ae2oa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52522, 1.03293, 2.03564)
+
+[node name="MusicPlayer" type="Node3D" parent="."]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("23_4ndbg")
+autoplay = true

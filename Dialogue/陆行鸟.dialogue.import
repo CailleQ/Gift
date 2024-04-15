@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cd7b7rsht1t63"
+path="res://.godot/imported/陆行鸟.dialogue-5c83d9f1f7cc6723b65b14ba55574995.tres"
+
+[deps]
+
+source_file="res://Dialogue/陆行鸟.dialogue"
+dest_files=["res://.godot/imported/陆行鸟.dialogue-5c83d9f1f7cc6723b65b14ba55574995.tres"]
+
+[params]
+
+defaults=true

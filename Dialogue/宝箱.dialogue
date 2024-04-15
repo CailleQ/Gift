@@ -1,12 +1,21 @@
 ~ 宝箱A
-if cleaed == 1 :
-	会说话的宝箱A: ......
-else :
-	会说话的宝箱A: ......
 
+会说话的宝箱A: ......
+会说话的宝箱A: ......
+会说话的宝箱A: ......
+set cleared = 1 
+=> END
 
 ~ 宝箱B
-会说话的宝箱B: ......
+if cleared == 0 :
+	会说话的宝箱B: ......
+	set count = count +1
+else ：
+	会说话的宝箱B: asdasdad
+	
+
+if count == 20 :
+	会说话的宝箱B: asdasdad
 
 
 => END

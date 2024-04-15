@@ -1,13 +1,7 @@
 ~ start
-#雕像的对话 待修改
-仙人刺: [[Hi|Hello|Howdy]],firstly i want to celebrate ur birthday 
-仙人刺: Here are some choices.
-- First one
-	仙人刺: You picked the first one.
-- Second one
-	仙人刺: You picked the second one.
-- Start again => start
-- End the conversation => END
-仙人刺: For more information see the online documentation.
-
+仙人刺: [[Hi|Hello|Howdy]],今年是我哟！
+仙人刺: 亚历山大因为自己的png图素材挂了来不了啦，祝你生日快乐！
+仙人刺: 今天的陆行鸟好像也很兴奋呢！
+诞辰陆行鸟: 咕哎！
+仙人刺: 总之又过了一年，希望你一直开开心心，记得不要给自己太大压力喔！
 => END
