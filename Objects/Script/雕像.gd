@@ -10,7 +10,7 @@ func operat():
 	
 	
 func switch_dialog() :
-	print(name)
+	#print(name)
 	if name == "雕像A":
 		actionable.dialogue_start = "雕像A"
 	else:

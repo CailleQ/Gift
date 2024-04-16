@@ -1,6 +1,7 @@
 extends Sprite3D
 
 @onready var actionable = get_node("./Actionable")
+var done = 0
 
 func _ready():
 	
@@ -18,44 +19,40 @@ func _physics_process(delta):
 	#分别控制宝箱A与B的开启
 	if name == "宝箱A" and can_open_A == 1:
 		frame = 1
-	if name == "宝箱B" and can_open_B == 1:
+	if name == "宝箱B" and can_open_B == 1 and done == 0 :
 		frame = 1
+		done = 1
+		print(done)
 		add_file(happybirthday)
 
 
 func operat():
 	var count = get_node("/root/State").count
-	print(count) #测试 count 数值变动
+	#print(count) #测试 count 数值变动
 
 
 func switch_dialog() :
-	print(name)
+	#print(name)
 	if name == "宝箱A":
 		actionable.dialogue_start = "宝箱A"
 	else:
 		actionable.dialogue_start = "宝箱B"
 
 #本地添加/修改txt文件
-#func add_file(content):
-	#var file_path = "user://%appdata%/godot/app_userdata/gift.txt"
-	##%appdata%/godot/app_userdata
-	#var file = FileAccess.open("user://%appdata%/godot/app_userdata/gift.txt", FileAccess.WRITE)
-	#if file != null:
-		#file.store_string(content)
-	#else : 
-		#print("can not open file")
-
-#未成功 待修改
-func add_file(content, file_path = "user://%appdata%/godot/app_userdata/gift.txt"):
-	var file = FileAccess.open(file_path, FileAccess.WRITE )  # Open for writing and create if needed
-	if not file:
-		print("Error creating file:", file_path)
-		return
-	file.store_string(content)
-	file.close()
+#成功 待修改
+func add_file(content):
+	#桌面位置：  %USERPROFILE%/desktop   "%USERPROFILE%/desktop/gift"
+	#	var exit_code = OS.execute("CMD.exe", ["/C", "C:/Users/Caille/Desktop/test/", "echo hello world >> C:/Users/Caille/Desktop/test/test.txt"], output, true, true)
+	var output = []
+	#print("执行中")
+	var exit_code = OS.execute("CMD.exe", ["/C", "echo hello world >>%USERPROFILE%/desktop/gift/test.txt"],output,true)
+	#print("执行完毕")
+	if exit_code == OK:
+		for line in output:
+			print(line)
 
 
 #想写的话
 const happybirthday = " 
-阿巴阿巴阿巴阿巴阿巴阿巴
+echo hello world >>%USERPROFILE%/desktop/gift/test.txt
 "
