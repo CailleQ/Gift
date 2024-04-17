@@ -21,5 +21,15 @@ offset_bottom = 912.0
 theme_override_font_sizes/font_size = 48
 text = "Quit"
 
+[node name="Label" type="Label" parent="."]
+offset_left = 614.0
+offset_top = 262.0
+offset_right = 1277.0
+offset_bottom = 475.0
+theme_override_font_sizes/font_size = 50
+text = "实在不知该起什么名字 果咩捏
+
+游戏场景内  按 'E' 进行互动喔"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

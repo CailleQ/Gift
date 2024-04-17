@@ -12,3 +12,4 @@ extends Node
 
 #雕像的states
 @export var ignore = 0
+@export var statue_said = 0
